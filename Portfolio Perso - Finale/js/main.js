@@ -171,3 +171,16 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+// Barre de progression
+window.onload = () => {
+    window.addEventListener("scroll", () => {
+        let hauteur = document.documentElement.scrollHeight - window.innerHeight;
+        let prosition = window.scrollY;
+        let largeur = document.documentElement.clientWidth;
+
+        let barre = (position/hauteur) * largeur;
+
+        document.getElementById("barre").style.width = barre + "px";
+    })
+}
